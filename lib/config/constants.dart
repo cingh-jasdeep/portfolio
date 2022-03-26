@@ -5,4 +5,6 @@ class Constants {
   static const PROFILE_GITHUB = 'https://github.com/yashk2000/';
   static const PROFILE_TWITTER = 'https://twitter.com/_p0lar_bear';
   static const PROFILE_INSTAGRAM = 'https://www.instagram.com/not_khare/';
+  static const LINK_PORTFOLIO_YASH_KHARE =
+      'https://github.com/yashk2000/portfolio';
 }

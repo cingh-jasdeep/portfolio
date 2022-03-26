@@ -35,9 +35,25 @@ class ExperienceRowState extends State<ExperienceRow> {
             child: new Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                new Text(
-                  widget.experience.jobTitle,
-                  style: new TextStyle(fontSize: 22.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: new Text(
+                        widget.experience.jobTitle,
+                        style: new TextStyle(fontSize: 22.0),
+                        softWrap: true,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: new Text(
+                        widget.experience.date,
+                        style:
+                            new TextStyle(fontSize: 16.0, color: Colors.grey),
+                      ),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: 6.0),
@@ -50,7 +66,10 @@ class ExperienceRowState extends State<ExperienceRow> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 6.0),
+                  padding: EdgeInsets.only(
+                    top: 6.0,
+                    right: 32.0,
+                  ),
                   child: new Text(
                     widget.experience.description,
                     style: TextStyle(
@@ -60,13 +79,6 @@ class ExperienceRowState extends State<ExperienceRow> {
               ],
             ),
           ),
-          new Padding(
-            padding: const EdgeInsets.only(right: 16.0, left: 16.0),
-            child: new Text(
-              widget.experience.date,
-              style: new TextStyle(fontSize: 16.0, color: Colors.grey),
-            ),
-          )
         ],
       ),
     );

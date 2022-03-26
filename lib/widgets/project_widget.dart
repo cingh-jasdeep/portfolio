@@ -1,18 +1,13 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/projectCard.dart';
-import 'dart:html' as html;
-
 import 'package:portfolio/models/project_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectWidget extends StatelessWidget {
   final Project _project;
-  final double _bottomPadding;
   final int randomNumber;
 
-  ProjectWidget(this._project, this._bottomPadding, this.randomNumber);
+  ProjectWidget(this._project, this.randomNumber);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +46,7 @@ class ProjectWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text(_project.name,
-                          style: Theme.of(context).textTheme.title),
+                          style: Theme.of(context).textTheme.headline6),
                       SizedBox(
                         height: height * .01,
                       ),
@@ -90,8 +85,9 @@ class ProjectWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      // https://docs.flutter.dev/release/breaking-changes/2-2-deprecations
                       Text(_project.name,
-                          style: Theme.of(context).textTheme.title),
+                          style: Theme.of(context).textTheme.headline6),
                       SizedBox(
                         height: height * .01,
                       ),
@@ -134,9 +130,5 @@ class ProjectWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void onProjectClick() {
-    if (_project.link != null) html.window.open(_project.link, 'Yash Khare');
   }
 }

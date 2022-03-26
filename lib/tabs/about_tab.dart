@@ -1,11 +1,7 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/config/assets.dart';
 import 'package:portfolio/config/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'dart:html' as html;
-
-import '../widgets/theme_inherited_widget.dart';
 
 class AboutTab extends StatelessWidget {
   @override
@@ -18,21 +14,21 @@ class AboutTab extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
-                radius: 100,
+                radius: 80,
                 backgroundImage: Image.asset(Assets.avatar).image,
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
-                'Yash Khare',
-                textScaleFactor: 4,
+                'Jasdeep Singh',
+                textScaleFactor: 3,
               ),
               SizedBox(
                 height: 20,
               ),
               Text(
-                'Member and mentor @amFOSS\nComputer Vision | Flutter | Android Developer',
+                'Web and Mobile App Developer | Always learning',
                 style: Theme.of(context).textTheme.caption,
                 textScaleFactor: 2,
                 textAlign: TextAlign.center,
@@ -40,22 +36,22 @@ class AboutTab extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              Center(
-                child: new InkWell(
-                    child: new Text(
-                      'Checkout my Curriculum Vitae',
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontSize: 16,
-                        //fontWeight: FontWeight.bold,
-                        fontFamily: 'OpenSans',
-                      ),
-                      textScaleFactor: 2,
-                      textAlign: TextAlign.center,
-                    ),
-                    onTap: () =>
-                        launch('https://yashk2000.github.io/docs/cv.pdf')),
-              ),
+              // Center(
+              //   child: new InkWell(
+              //       child: new Text(
+              //         'My Resume',
+              //         style: TextStyle(
+              //           color: Colors.blue,
+              //           fontSize: 16,
+              //           //fontWeight: FontWeight.bold,
+              //           fontFamily: 'OpenSans',
+              //         ),
+              //         textScaleFactor: 2,
+              //         textAlign: TextAlign.center,
+              //       ),
+              //       onTap: () =>
+              //           launch('https://cingh-jasdeep.github.io/docs/cv.pdf')),
+              // ),
               SizedBox(
                 height: 30,
               ),
@@ -63,72 +59,38 @@ class AboutTab extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  FlatButton.icon(
+                  TextButton.icon(
+                    label: Text('Github'),
                     icon: SizedBox(
                         width: 20,
                         height: 20,
                         child: Image.asset(Assets.github)),
-                    label: Text('Github'),
-                    onPressed: () =>
-                        html.window.open(Constants.PROFILE_GITHUB, 'yashk2000'),
+                    onPressed: () => launch(Constants.PROFILE_GITHUB),
                   ),
-                  FlatButton.icon(
-                    icon: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: Image.asset(Assets.gitlab)),
-                    label: Text('GitLab'),
-                    onPressed: () =>
-                        html.window.open(Constants.PROFILE_GITLAB, 'yashk2000'),
-                  ),
-                  FlatButton.icon(
-                    icon: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: Image.asset(Assets.blog)),
-                    label: Text('Blog'),
-                    onPressed: () =>
-                        html.window.open(Constants.PROFILE_BLOG, 'yash2k'),
-                  )
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  FlatButton.icon(
-                    icon: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: Image.asset(Assets.instagram)),
-                    label: Text('Instagram'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_INSTAGRAM, 'not_khare'),
-                  ),
-                  FlatButton.icon(
-                    icon: SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: Image.asset(Assets.twitter)),
-                    label: Text('Twitter'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_TWITTER, '_p0lar_bear'),
-                  ),
-                  FlatButton.icon(
+                  TextButton.icon(
                     icon: SizedBox(
                         width: 20,
                         height: 20,
                         child: Image.asset(Assets.linkedin)),
                     label: Text('Linkedin'),
-                    onPressed: () => html.window
-                        .open(Constants.PROFILE_LINKEDIN, 'yashk2000'),
+                    onPressed: () => launch(Constants.PROFILE_LINKEDIN),
                   )
                 ],
               ),
-              SizedBox(height: 120),
+              SizedBox(height: 60),
               Align(
-                  alignment: Alignment.bottomCenter,
-                  child: Text("Made with Flutter"))
+                alignment: Alignment.bottomCenter,
+                child: Column(
+                  children: [
+                    TextButton(
+                      onPressed: () =>
+                          launch(Constants.LINK_PORTFOLIO_YASH_KHARE),
+                      child: Text('Template By Yash Khare'),
+                    ),
+                    Text("Made with Flutter"),
+                  ],
+                ),
+              )
             ],
           ),
         ),

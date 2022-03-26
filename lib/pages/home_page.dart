@@ -47,20 +47,20 @@ class _HomePageState extends State<HomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
-            title: Text('About'),
+            label: 'About',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.chrome_reader_mode),
-            title: Text('Experience'),
+            label: 'Experience',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.folder_open),
-            title: Text('Projects '),
+            label: 'Projects ',
           )
         ],
         currentIndex: _selectedIndex,
         onTap: (index) => setState(() => _selectedIndex = index),
-        selectedItemColor: Theme.of(context).accentColor,
+        selectedItemColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

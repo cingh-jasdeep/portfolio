@@ -6,7 +6,7 @@ import 'package:portfolio/widgets/project_widget.dart';
 import 'package:portfolio/widgets/responsive_widget.dart';
 
 class ProjectsTab extends StatelessWidget {
-  Random random = new Random();
+  final Random random = new Random();
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget(
@@ -17,13 +17,16 @@ class ProjectsTab extends StatelessWidget {
             (MediaQuery.of(context).size.height / 1.3),
         children: List.generate(
           projects.length,
-          (index) => ProjectWidget(projects[index], 0,random.nextInt(5000)),
+          (index) => ProjectWidget(projects[index], 0),
         ),
       ),
       smallScreen: ListView.builder(
-          itemCount: projects.length,
-          itemBuilder: (context, index) => ProjectWidget(
-              projects[index], (index == projects.length - 1 ? 16.0 : 0), random.nextInt(5000))),
+        itemCount: projects.length,
+        itemBuilder: (context, index) => ProjectWidget(
+          projects[index],
+          (index == projects.length - 1 ? 16.0 : 0),
+        ),
+      ),
     );
   }
 }

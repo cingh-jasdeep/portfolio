@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:portfolio/pages/home_page.dart';
 import 'package:portfolio/widgets/theme_inherited_widget.dart';
 
@@ -10,7 +11,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ThemeSwitcherWidget(
-      initialDarkModeOn: false,
+      //https://stackoverflow.com/a/56307575
+      initialDarkModeOn: SchedulerBinding.instance.window.platformBrightness ==
+          Brightness.dark,
       child: MainPage(),
     );
   }

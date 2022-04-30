@@ -11,6 +11,7 @@ darkTheme(context) {
     appBarTheme: AppBarTheme(
       elevation: 0.0,
       color: Colors.black,
+      foregroundColor: Colors.white,
     ),
     colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(
       secondary: Colors.blue,

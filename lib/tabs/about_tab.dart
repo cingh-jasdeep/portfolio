@@ -36,22 +36,6 @@ class AboutTab extends StatelessWidget {
               SizedBox(
                 height: 10,
               ),
-              // Center(
-              //   child: new InkWell(
-              //       child: new Text(
-              //         'My Resume',
-              //         style: TextStyle(
-              //           color: Colors.blue,
-              //           fontSize: 16,
-              //           //fontWeight: FontWeight.bold,
-              //           fontFamily: 'OpenSans',
-              //         ),
-              //         textScaleFactor: 2,
-              //         textAlign: TextAlign.center,
-              //       ),
-              //       onTap: () =>
-              //           launch('https://cingh-jasdeep.github.io/docs/cv.pdf')),
-              // ),
               SizedBox(
                 height: 30,
               ),
@@ -74,6 +58,10 @@ class AboutTab extends StatelessWidget {
                         child: Image.asset(Assets.linkedin)),
                     label: Text('Linkedin'),
                     onPressed: () => launch(Constants.PROFILE_LINKEDIN),
+                  ),
+                  TextButton(
+                    child: Text('Resume'),
+                    onPressed: () => launch(Constants.LINK_RESUME),
                   )
                 ],
               ),
